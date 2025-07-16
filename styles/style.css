@@ -6,20 +6,24 @@
 
 html {
   block-size: 100%;
+
 }
+
+
 
 .page {
   display: flex;
+  min-height: 100vh;
   inline-size: 1200px;
   block-size: 100%;
-  margin: auto;
+  margin: 0;
   color: #fff;
   font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
   background-color: #1b1919;
   justify-content: center;
-  align-items: center;
-  max-height: 800px;
+  align-items: center; 
+  
 }
 
 h1,
@@ -43,7 +47,6 @@ ol {
 
 .content {
   display: flex;
-  margin-top: 133px;
   align-items: flex-end;
   width: 100%;
   gap: 30px;
@@ -101,7 +104,7 @@ ol {
 
 }
 
-.title::first-line {
+.content__accent {
   color: #545050;
 }
 
@@ -143,7 +146,7 @@ ol {
   gap: 2px;
   max-width: 390px;
   width: 100%;
-  overflow: hidden;
+  
   
 }
 
@@ -156,27 +159,25 @@ ol {
   
 }
 
-.content__card-link_current {
+.content__card-link_current,
+.content__card-link:active {
   background-color: #545050;
 }
 
-.content__card-link_current:active {
-  background-color: #545050;
-}
 
 .content__card-link:hover .content__video-card-title, .content__card-link:hover .content__video-card-description {
-  text-decoration: underline solid #fff 2px;
+  text-decoration: underline solid currentColor 2px;
   overflow: visible;
   display: block;
 }
 
-.content__card-link_current:focus {
+.content__card-link:focus {
   border: none;
   outline: none;
 }
 
-.content__card-link_current:focus-visible {
-  outline: 1px solid #fff;
+.content__card-link:focus-visible {
+  outline: 1px solid currentColor;
 }
 
 .content__video-card-thumbnail {
@@ -184,6 +185,7 @@ ol {
   min-width: 194px;
   flex-shrink: 0;
   object-fit: cover;
+  object-position: center;
   
 }
 
@@ -203,25 +205,21 @@ ol {
 
 }
 
-.content__video-card-description-container h2, p {
-  object-fit: cover;
-  object-position: center;
-  overflow: hidden;
-  
-}
 
 .content__video-card-title {
   font-family: "Oswald", sans-serif;
   font-weight: 700;
   font-size: 30px;
-  line-height: 100%;
   text-transform: uppercase;
+  line-height: 100%;
   overflow-x: hidden;
+  overflow-y: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
   margin-bottom: 6px;
   width: 100%;
   display: block;
+  
 
 }
 
@@ -233,15 +231,16 @@ ol {
   flex-direction: column;
   object-fit: cover;
   object-position: center;
-  overflow: hidden;
+  
+ 
   
 }
 
 .search-form__fieldset-title {
-  font-family: 'Fira Sans Condensed', sans-serif;
+  font-family: inherit;
   font-weight: 400;
   font-size: 18px;
-  color: #fff;
+  color: currentColor;
   margin-bottom: 5px;
 
 }
@@ -264,6 +263,7 @@ ol {
 }
 
 .search-form__fieldset {
+  padding-left: 5px;
   border: none;
   width: 100%;
 }
@@ -284,15 +284,15 @@ ol {
 }
 
 .search-form__label:has(:focus-visible) {
-  border: 1px solid #fff;
+  border: 1px solid currentColor;
     
 }
 
 .search-form__textfield {
-  border: 1px solid #fff;
+  border: 1px solid currentColor;
   border-width: 1px 0;
   background-color: transparent;
-  font-family: 'Fira Sans Condensed', sans-serif;
+  font-family: inherit;
   font-weight: 400;
   font-size: 18px;
   line-height: 100%;
@@ -314,14 +314,14 @@ ol {
 .search-form__pseudo-checkbox {
   height: 19px;
   width: 19px;
-  border: 1px solid #fff;
+  border: 1px solid currentColor;
   padding: 1px;
 }
 
 .search-form__pseudo-checkbox::after {
   content: '';
   display: block;
-  background-color: #fff;
+  background-color: currentColor;
   height: 100%;
   width: 100%;
   opacity: 0;
@@ -333,13 +333,13 @@ ol {
 }
 
 .search-form__label-text {
-  font-family: 'Fira Sans Condensed', sans-serif;
+  font-family: inherit;
   font-size: 18px;
 }
 
 .search-form__label:hover .search-form__label-text {
   text-decoration-line: underline;
-  text-decoration-color: #fff;
+  text-decoration-color: currentColor;
   text-decoration-thickness: 2px;
   text-underline-offset: 3px;
 }
@@ -349,9 +349,9 @@ ol {
 }
 
 .button {
-  border: 1px solid #fff;
-  color: #fff;
-  font-family: Fira Sans Condensed, sans-serif;
+  border: 1px solid currentColor;
+  color: currentColor;
+  font-family: inherit;
   font-weight: 700;
   font-size: 18px;
   line-height: 100%;
